@@ -1,19 +1,16 @@
-﻿<Window x:Class="Keyboard.MainWindow"
+﻿<Window x:Class="Keyboard.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mvvm="http://prismlibrary.com/"
+        mvvm:ViewModelLocator.AutoWireViewModel="True"
         xmlns:local="clr-namespace:Keyboard"
         xmlns:viewModels="clr-namespace:Keyboard.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="300">
-        <!--mvvm:ViewModelLocator.AutoWireViewModel="True"-->
-    <Window.DataContext>
-        <viewModels:MainWindowViewModel/>
-    </Window.DataContext>
-    <Grid >
 
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
