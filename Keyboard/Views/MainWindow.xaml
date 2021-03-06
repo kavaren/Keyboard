@@ -8,21 +8,21 @@
         xmlns:local="clr-namespace:Keyboard"
         xmlns:viewModels="clr-namespace:Keyboard.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="300">
+        Title="MainWindow" Height="400" Width="300" MinWidth="300" MinHeight="400">
 
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="20*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80" />
-            <ColumnDefinition Width="80" />
-            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="40*" />
         </Grid.ColumnDefinitions>
 
         <!-- Internal Grid for top row of items -->
@@ -32,7 +32,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Content="{Binding DisplayText}" />
+            <Label Grid.Column="0" Content="{Binding DisplayText}" FontSize="24" HorizontalAlignment="Right" />
 
             <Button Content ="&#x21E6;"
                     Command="{Binding DeleteCharCommand}"
@@ -42,61 +42,61 @@
         <Button Content ="1"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="1"
-                Grid.Row="1" Grid.Column="0" />
+                Grid.Row="1" Grid.Column="0" FontSize="16" />
 
         <Button Content="2"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="2"
-                Grid.Row="1" Grid.Column="1" />
+                Grid.Row="1" Grid.Column="1" FontSize="16" />
 
         <Button Content="3"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="3"
-                Grid.Row="1" Grid.Column="2" />
+                Grid.Row="1" Grid.Column="2" FontSize="16" />
 
         <Button Content="4"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="4"
-                Grid.Row="2" Grid.Column="0" />
+                Grid.Row="2" Grid.Column="0" FontSize="16" />
 
         <Button Content="5"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="5"
-                Grid.Row="2" Grid.Column="1" />
+                Grid.Row="2" Grid.Column="1" FontSize="16" />
 
         <Button Content="6"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="6"
-                Grid.Row="2" Grid.Column="2" />
+                Grid.Row="2" Grid.Column="2" FontSize="16" />
 
         <Button Content="7"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="7"
-                Grid.Row="3" Grid.Column="0" />
+                Grid.Row="3" Grid.Column="0" FontSize="16" />
 
         <Button Content="8"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="8"
-                Grid.Row="3" Grid.Column="1" />
+                Grid.Row="3" Grid.Column="1" FontSize="16" />
 
         <Button Content="9"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="9"
-                Grid.Row="3" Grid.Column="2" />
+                Grid.Row="3" Grid.Column="2" FontSize="16" />
 
         <Button Content="*"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="*"
-                Grid.Row="4" Grid.Column="0" />
+                Grid.Row="4" Grid.Column="0" FontSize="16" />
 
         <Button Content="0"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="0"
-                Grid.Row="4" Grid.Column="1" />
+                Grid.Row="4" Grid.Column="1" FontSize="16" />
 
         <Button Content="#"
                 Command="{Binding AddCharCommand}"
                 CommandParameter="#"
-                Grid.Row="4" Grid.Column="2" />
+                Grid.Row="4" Grid.Column="2" FontSize="16" />
     </Grid>
 </Window>
