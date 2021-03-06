@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31005.135
+VisualStudioVersion = 16.0.31019.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keyboard", "Keyboard\Keyboard.csproj", "{9D6CE922-7FC5-4106-ACD6-302F3CB88106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keyboard", "Keyboard\Keyboard.csproj", "{71E90CF3-19EB-47FD-A237-413B048F16C9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{08D76FC5-52E6-4E07-937E-E44BBE124F29}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{9B027849-1A0F-44DF-8858-F1B45466E6D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,15 +13,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9D6CE922-7FC5-4106-ACD6-302F3CB88106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D6CE922-7FC5-4106-ACD6-302F3CB88106}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D6CE922-7FC5-4106-ACD6-302F3CB88106}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D6CE922-7FC5-4106-ACD6-302F3CB88106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E90CF3-19EB-47FD-A237-413B048F16C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E90CF3-19EB-47FD-A237-413B048F16C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E90CF3-19EB-47FD-A237-413B048F16C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E90CF3-19EB-47FD-A237-413B048F16C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {16B62E91-B880-4796-95EA-D10C6705A14F}
+		SolutionGuid = {2285C236-F7D0-4108-9AB4-02C97CAE3448}
 	EndGlobalSection
 EndGlobal
