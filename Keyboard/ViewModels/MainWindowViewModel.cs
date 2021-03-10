@@ -23,11 +23,8 @@ namespace Keyboard.ViewModels
         private void InitializeCommands()
         {
             AddCharCommand = new DelegateCommand<string>(_AddChar);
-
             DeleteCharCommand = new DelegateCommand(_DeleteChar);
-
             ClearCommand = new DelegateCommand(_Clear);
-
             AddNumberCommand = new DelegateCommand(_AddNumber);
         }
 
@@ -61,7 +58,7 @@ namespace Keyboard.ViewModels
         {
             if (DisplayText != "")
             {
-                NumberList.Add(new NumberModel(DisplayText));
+                NumberList.Add(new PhoneNumber(DisplayText));
                 _Clear();
             }
         }
@@ -69,7 +66,7 @@ namespace Keyboard.ViewModels
         private string inputString = "";
         private string displayText = "";
         private char[] specialChars = { '*', '#' };
-        private ObservableCollection<NumberModel> numberList = new();
+        private ObservableCollection<PhoneNumber> numberList = new();
 
         #region Public properties
         public string InputString
@@ -83,7 +80,7 @@ namespace Keyboard.ViewModels
             get => displayText;
             set => SetProperty(ref displayText, value);
         }
-        public ObservableCollection<NumberModel> NumberList { get => numberList; set => numberList = value; }
+        public ObservableCollection<PhoneNumber> NumberList { get => numberList; set => numberList = value; }
 
         public ICommand AddCharCommand { get; set; }
         public ICommand DeleteCharCommand { get; set; }
