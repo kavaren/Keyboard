@@ -9,6 +9,28 @@
         xmlns:viewModels="clr-namespace:Keyboard.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="300" MinWidth="300" MinHeight="400">
+    
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+    
+    <Window.InputBindings>
+        <KeyBinding Key="Backspace" Command="{Binding DeleteCharCommand}"/>
+        <KeyBinding Key="Tab" Command="{Binding AddNumberCommand}"/> 
+        <KeyBinding Key="D1" Command="{Binding AddCharCommand}" CommandParameter="1"/>
+        <KeyBinding Key="D2" Command="{Binding AddCharCommand}" CommandParameter="2"/>
+        <KeyBinding Key="D3" Command="{Binding AddCharCommand}" CommandParameter="3"/>
+        <KeyBinding Key="D4" Command="{Binding AddCharCommand}" CommandParameter="4"/>
+        <KeyBinding Key="D5" Command="{Binding AddCharCommand}" CommandParameter="5"/>
+        <KeyBinding Key="D6" Command="{Binding AddCharCommand}" CommandParameter="6"/>
+        <KeyBinding Key="D7" Command="{Binding AddCharCommand}" CommandParameter="7"/>
+        <KeyBinding Key="D8" Command="{Binding AddCharCommand}" CommandParameter="8"/>
+        <KeyBinding Key="D9" Command="{Binding AddCharCommand}" CommandParameter="9"/>
+        <KeyBinding Key="D0" Command="{Binding AddCharCommand}" CommandParameter="0"/>
+    </Window.InputBindings>
+    
+
+
 
     <Grid >
         <Grid.RowDefinitions>
@@ -23,6 +45,8 @@
             <ColumnDefinition Width="40*" />
             <ColumnDefinition Width="40*" />
             <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="60*" />
+            <ColumnDefinition Width="60*" />
         </Grid.ColumnDefinitions>
 
         <!-- Internal Grid for top row of items -->
@@ -32,12 +56,15 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
+
             <Label Grid.Column="0" Content="{Binding DisplayText}" FontSize="24" HorizontalAlignment="Right" />
 
             <Button Content ="&#x21E6;"
                     Command="{Binding DeleteCharCommand}"
                     Grid.Column="1" />
         </Grid>
+
+
 
         <Button Content ="1"
                 Command="{Binding AddCharCommand}"
@@ -98,5 +125,16 @@
                 Command="{Binding AddCharCommand}"
                 CommandParameter="#"
                 Grid.Row="4" Grid.Column="2" FontSize="16" />
+        <ListView ItemsSource="{Binding NumberList }" Grid.Column="3" HorizontalAlignment="Stretch" Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Number" DisplayMemberBinding="{Binding Number}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Command="{Binding ClearCommand}" Content="Clear" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Command="{Binding AddNumberCommand}" Content="Add" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
+
+
 </Window>
