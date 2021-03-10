@@ -1,10 +1,12 @@
 ﻿namespace Keyboard.Models
 {
-    public class NumberModel
+    public class PhoneNumber
     {
-        private string _number;
+        private string _number = "";
 
-        public NumberModel(string number)
+        public PhoneNumber() { }
+
+        public PhoneNumber(string number) : base()
         {
             _number = number;
         }
