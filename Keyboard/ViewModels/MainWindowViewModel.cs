@@ -84,12 +84,29 @@ namespace Keyboard.ViewModels
             await JsonSerializer.SerializeAsync(createStream, NumberList, options);
         }
 
+        /// <summary>
+        /// Function for: 
+        /// - checking path for json
+        /// - checking if path contains json
+        /// - deserializing json to NumberList
+        /// </summary>
         public async void _JsonDeserializeNow()
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Keyboard\\NumberList\\";
-            string filePath = path + "NumberList.json";
-            using FileStream openStream = File.OpenRead(filePath);
-            NumberList = await JsonSerializer.DeserializeAsync<ObservableCollection<NumberModel>>(openStream);
+
+            string[] check = null;
+            if (Directory.Exists(path))
+            {
+                check = Directory.GetFiles(path);
+            }
+            else return;
+
+            if (check.Contains<string>("NumberList.json"))
+            {
+                string filePath = path + "NumberList.json";
+                using FileStream openStream = File.OpenRead(filePath);
+                NumberList = await JsonSerializer.DeserializeAsync<ObservableCollection<NumberModel>>(openStream);
+            }
         }
         #endregion
 
