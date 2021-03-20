@@ -68,10 +68,14 @@ namespace Keyboard.ViewModels
                 _Clear();
             }
         }
+
+        /// <summary>
+        /// Platform agnostic way for serializing files into LocalAppData folder
+        /// </summary>
         public async void _JsonSerializeNow()
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Keyboard\\NumberList\\";
-            string filePath = path + "NumberList.json";
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Keyboard", "NumberList");
+            string filePath = Path.Combine(path, "NumberList.json");
 
             if (!Directory.Exists(path))
             {
@@ -92,7 +96,7 @@ namespace Keyboard.ViewModels
         /// </summary>
         public async void _JsonDeserializeNow()
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Keyboard\\NumberList\\";
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Keyboard", "NumberList");
 
             string[] check = null;
             if (Directory.Exists(path))
@@ -103,7 +107,7 @@ namespace Keyboard.ViewModels
 
             if (check.Contains<string>("NumberList.json"))
             {
-                string filePath = path + "NumberList.json";
+                string filePath = Path.Combine(path, "NumberList.json");
                 using FileStream openStream = File.OpenRead(filePath);
                 NumberList = await JsonSerializer.DeserializeAsync<ObservableCollection<NumberModel>>(openStream);
             }
