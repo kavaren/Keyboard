@@ -1,4 +1,4 @@
-﻿<Window x:Class="Keyboard.Views.MainWindow"
+<Window x:Class="Keyboard.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -64,6 +64,16 @@
                     Grid.Column="1" />
         </Grid>
 
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open" Command="{Binding JsonDeserialize}"/>
+                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Save" Command="{Binding JsonSerialize}"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
 
 
         <Button Content ="1"

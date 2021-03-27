@@ -1,5 +1,8 @@
-﻿namespace Keyboard.Models
+namespace Keyboard.Models
 {
+    /// <summary>
+    /// Futureproof Model Class 
+    /// </summary>
     public class NumberModel
     {
         private string _number;
