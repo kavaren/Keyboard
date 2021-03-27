@@ -105,9 +105,9 @@ namespace Keyboard.ViewModels
             }
             else return;
 
-            if (check.Contains<string>("NumberList.json"))
+            string filePath = Path.Combine(path, "NumberList.json");
+            if (check.Contains(filePath))
             {
-                string filePath = Path.Combine(path, "NumberList.json");
                 using FileStream openStream = File.OpenRead(filePath);
                 NumberList = await JsonSerializer.DeserializeAsync<ObservableCollection<NumberModel>>(openStream);
             }
@@ -115,8 +115,8 @@ namespace Keyboard.ViewModels
         #endregion
 
         #region private fields
-        private string inputString = "";
-        private string displayText = "";
+        private string inputString = string.Empty;
+        private string displayText = string.Empty;
         private char[] specialChars = { '*', '#' };
         private ObservableCollection<NumberModel> numberList = new();
         #endregion
